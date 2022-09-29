@@ -9,3 +9,16 @@ button.addEventListener('click', () => {
 btnClose.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
+
+import { useState } from 'react';
+
+export default function MyModal() {
+  let [isOpen, setIsOpen] = useState(true)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }

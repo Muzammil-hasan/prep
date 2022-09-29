@@ -260,4 +260,8 @@ p {
     margin-left: 0;
     margin-right: auto;
   }
+
+  .overlay {
+    width: 100%;
+  }
 }
