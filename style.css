@@ -1,0 +1,263 @@
+/* This should be in another file */
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: 400;
+  src: url('./assets/fonts/CenturyGothic.woff2');
+  display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: 700;
+  src: url('./assets/fonts/CenturyGothic-Bold.woff2');
+  display: swap;
+}
+
+// Mobile phones
+@media (max-width: 767px) {
+  html {
+    font-size: 3.2vw;
+  }
+}
+
+// Tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 1.9vw;
+  }
+}
+
+// Desktop
+@media (min-width: 1025px) {
+  html {
+    font-size: 0.9375vw;
+  }
+}
+
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Century Gothic';
+  color: #000000;
+  -webkit-font-feature-settings: 'liga' 0;
+  font-feature-settings: 'liga' 0;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.about {
+  position: relative;
+  text-align: center;
+  padding: 5rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_headline {
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+.about_description {
+  margin-top: 2rem;
+}
+
+.about_featuresList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  list-style: none;
+  padding: 0 10rem;
+  margin-top: 2.5rem;
+}
+
+.about_featuresList__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  width: 33%;
+}
+
+.about_featuresList__item-image {
+  margin-bottom: 1rem;
+}
+
+.about_featuresList__item-image img {
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: contain;
+}
+
+.about_featuresList__item-image > .caption {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.primary_cta {
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+  background-color: #ed272f;
+  transition: background-color 150ms ease-in-out;
+  font-size: 0.95rem;
+}
+
+.primary_cta:hover {
+  background-color: #c92e36;
+}
+
+.btn {
+  margin-top: 3rem;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 50vw;
+  background-color: white;
+  padding: 5rem 1.5rem;
+  animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.overlay_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.overlay_form-inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 23rem;
+}
+
+.overlay_form-inputWrapper span {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.overlay_form-inputWrapper input {
+  padding: 0.5rem;
+  border: 0.15em solid #2b2b2b;
+  font-size: 0.75rem;
+  width: 100%;
+}
+
+.overlay_form-inputWrapper input:focus-visible {
+  border-color: #ed272f;
+  outline: none;
+}
+
+.btn-submit {
+  margin-top: 1.5rem;
+  width: 10rem;
+}
+
+.btn-close {
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 50;
+  top: 1rem;
+  right: 1rem;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about {
+    text-align: left;
+    padding: 2rem 1.5rem;
+  }
+
+  .about_headline {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .about_description {
+    margin-top: 1rem;
+  }
+
+  .about_featuresList {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .about_featuresList__item {
+    width: 100%;
+    row-gap: 0;
+    align-items: flex-start;
+  }
+
+  .about_featuresList__item:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .about_featuresList__item-image {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+
+  .about_featuresList__item-image img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .about_featuresList__item-image .caption {
+    margin: 0;
+  }
+
+  .primary_cta {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
